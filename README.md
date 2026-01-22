@@ -27,7 +27,7 @@ Quick Aether Made Theme with color matching pallet and space themed wallpapers
 # Installation Theme  
  &nbsp; 
 To install this theme, simply use the omarchy-theme-install command:  
-&nbsp;
+&nbsp;  
 ```omarchy-theme-install https://github.com/Deoxizn/omarchy-space-bound-theme.git```  
 &nbsp;    
 &nbsp;  
@@ -47,6 +47,7 @@ For Vesktop users, you can install this theme by copying the theme file to your 
 ![image](previews/waybar.png)  
  &nbsp; 
 For the waybar, you can install this theme by copying the config.jsonc file and style.css to your waybar directory:  
+&nbsp; 
 &nbsp; 
 ```yay -S waybar-module-pacman-updates-git```   
 &nbsp; 
