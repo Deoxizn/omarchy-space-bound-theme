@@ -1,7 +1,7 @@
 # omarchy-space-bound-theme  
 &nbsp;  
 &nbsp;    
-Quick Aether Made Theme with color matching pallet and space themed wallpapers
+Quick Aether Made Theme with color matching pallet and space themed wallpapers includes a matching themes for starship, Waybar, and Vesktop
 &nbsp;  
 &nbsp;  
 &nbsp;  
@@ -49,8 +49,8 @@ For Vesktop users, you can install this theme by copying the theme file to your 
 For the waybar, you can install this theme by copying the config.jsonc file and style.css to your waybar directory:  
 &nbsp;   
 &nbsp;   
-```yay -S waybar-module-pacman-updates-git   
-cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar```
+````yay -S waybar-module-pacman-updates-git   
+cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar````
 &nbsp;    
 &nbsp;  
 &nbsp;    
