@@ -5,12 +5,12 @@ Quick Aether Made Theme with color matching pallet and space themed wallpapers
   
   
   
-#Screenshot:  
+# Screenshot:  
 ![image](preview.png) 
   
   
     
-#Backgrounds:  
+# Backgrounds:  
 ![image](backgrounds/wallhaven-d69oll.jpg)   
 ![image](backgrounds/wallhaven-g8dm6e.jpg)  
 ![image](backgrounds/wallhaven-kx996m.jpg)  
@@ -20,14 +20,14 @@ Quick Aether Made Theme with color matching pallet and space themed wallpapers
   
     
   
-#Installation Theme  
+# Installation Theme  
   
 To install this theme, simply use the omarchy-theme-install command:  
 
 omarchy-theme-install https://github.com/Deoxizn/omarchy-space-bound-theme.git  
   
     
-#Vesktop-Theme  
+# Vesktop-Theme  
   
 For Vesktop users, you can install this theme by copying (usally from ~/Downloads) the theme file to your Vesktop themes directory:  
   
