@@ -50,7 +50,7 @@ For the waybar, you can install this theme by copying the config.jsonc file and 
 &nbsp;   
 &nbsp;   
 ```yay -S waybar-module-pacman-updates-git```  
-cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar```
+```cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar```
 &nbsp;    
 &nbsp;  
 &nbsp;    
