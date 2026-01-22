@@ -28,7 +28,7 @@ Quick Aether Made Theme with color matching pallet and space themed wallpapers
  &nbsp; 
 To install this theme, simply use the omarchy-theme-install command:  
 &nbsp;
-omarchy-theme-install https://github.com/Deoxizn/omarchy-space-bound-theme.git  
+```omarchy-theme-install https://github.com/Deoxizn/omarchy-space-bound-theme.git```  
 &nbsp;    
 &nbsp;  
 &nbsp;    
@@ -37,7 +37,7 @@ omarchy-theme-install https://github.com/Deoxizn/omarchy-space-bound-theme.git
  &nbsp; 
 For Vesktop users, you can install this theme by copying the theme file to your Vesktop themes directory:  
 &nbsp;  
-cp ~/.config/omarchy/themes/space-bound/vencord.theme.css ~/.config/vesktop/themes/vencord.theme.css
+```cp ~/.config/omarchy/themes/space-bound/vencord.theme.css ~/.config/vesktop/themes/vencord.theme.css```
 &nbsp;    
 &nbsp;  
 &nbsp;    
@@ -47,8 +47,10 @@ cp ~/.config/omarchy/themes/space-bound/vencord.theme.css ~/.config/vesktop/them
 ![image](previews/waybar.png)  
  &nbsp; 
 For the waybar, you can install this theme by copying the config.jsonc file and style.css to your waybar directory:  
-&nbsp;  
-cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar
+&nbsp; 
+```yay -S waybar-module-pacman-updates-git```   
+&nbsp; 
+```cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar```
 &nbsp;    
 &nbsp;  
 &nbsp;    
@@ -59,4 +61,4 @@ cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar
 &nbsp; 
 &nbsp; For Starship, you can install this theme by copying the toml file to your ~/.config directory:    
 &nbsp;   
-cp ~/.config/omarchy/themes/space-bound/starship.toml ~/.config/starship.toml
+```cp ~/.config/omarchy/themes/space-bound/starship.toml ~/.config/starship.toml```
