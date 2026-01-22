@@ -1,0 +1,1054 @@
+# ~/.config/starship.toml
+#
+# Run in zsh to see palette of available colors:
+# for i in {0..255}; do print -Pn "%K{$i} %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+
+# Refresh
+#eval "$(starship init bash)"
+#
+#    ~   󰈙      🔑     
+# fade_left: =       
+# fade_right: =       
+# end_left: =  
+# end_right: =  
+#
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+# =========prompt=========
+
+format = """
+[ ](fg:bg_1)\
+$os\
+$cmd_duration\
+[ ](fg:bg_2 bg:bg_1)\
+$battery\
+[ ](fg:bg_6 bg:bg_2)\
+$status\
+$character\
+$sudo\
+[](fg:bg_6)\
+[](fg:bg_6)\
+$env_var\
+$username\
+$hostname\
+$localip\
+[ ](fg:bg_6 bg:bg_5)\
+$directory\
+[ ](fg:bg_5 bg:bg_4)\
+$git_branch\
+$git_status\
+$git_commit\
+$git_state\
+$git_metrics\
+$fossil_branch\
+$fossil_metrics\
+$hg_branch\
+$pijul_channel\
+$vcsh\
+[ ](fg:bg_4 bg:bg_3)\
+$buf\
+$bun\
+$c\
+$cmake\
+$cobol\
+$conda\
+$crystal\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$gradle\
+$haxe\
+$helm\
+$haskell\
+$java\
+$julia\
+$kotlin\
+$lua\
+$meson\
+$mise\
+$mojo\
+$nats\
+$nim\
+$nix_shell\
+$nodejs\
+$ocaml\
+$odin\
+$opa\
+$package\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$red\
+$rlang\
+$ruby\
+$scala\
+$rust\
+$spack\
+$swift\
+$terraform\
+$typst\
+$vagrant\
+$vlang\
+$xmake\
+$zig\
+[ ](fg:bg_3 bg:bg_2)\
+$aws\
+$azure\
+$docker_context\
+$gcloud\
+$guix_shell\
+$kubernetes\
+$openstack\
+$pixi\
+$singularity\
+[ ](fg:bg_2 bg:bg_1)\
+$time\
+$shell$shlvl$jobs\
+[ ](fg:bg_1)\
+"""
+
+#${custom.files}${custom.directories}\
+
+# A continuation prompt that displays right half-circle and filled-in arrow
+continuation_prompt = "[ ](bg:bg_1)[ ](fg:bg_1)"
+
+#the continuation prompt may not be shown if the right prompt is used; RP only appears in fish/zsh/xonsh, not bash/pwsh/tcsh/ion
+# right_format = """
+# [ ](fg:bg_1)\
+# [ ](fg:bg_2 bg:bg_1)\
+# [ ](fg:bg_6 bg:bg_2)\
+# [test](fg:fg_6 bg:bg_6)\
+# [](fg:bg_6)\
+# """
+
+# =========palettes=========
+# palette = '16c'
+# palette = 'afternoon'
+# palette = 'firefly'
+# palette = 'forest'
+# palette = 'ghost'
+# palette = 'glow'
+# palette = 'gray'
+# palette = 'gruvbox'
+# palette = 'neon'
+# palette = 'pastel'
+# palette = 'phoenix'
+# palette = 'proton'
+# palette = 'red'
+# palette = 'screen'
+# palette = 'space-bound'
+# palette = 'sunrise'
+palette = 'space-bound'
+
+[palettes.16c]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = 'bright-white'
+bg_1 = 'blue'
+fg_2='bright-white'
+bg_2='cyan'
+fg_3 = 'bright-white'
+bg_3 = 'green'
+fg_4 = 'black'
+bg_4 = 'bright-green'
+fg_5 = 'black'
+bg_5 = 'bright-yellow'
+fg_6='black'
+bg_6='yellow'
+
+[palettes.afternoon]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#FFFF00'
+bg_1 = '#2E3436'
+fg_2='#FFFF00'
+bg_2='#5F5F00'
+fg_3 = '#FFFF00'
+bg_3 = '#878700'
+fg_4 = '#2E3436'
+bg_4 = '#AFAF00'
+fg_5 = '#2E3436'
+bg_5 = '#D7D700'
+fg_6='#2E3436'
+bg_6='#FFFF00'
+
+[palettes.firefly]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00ff00'
+bg_1 = '#2E3436'
+fg_2='#00ff00'
+bg_2='#005F00'
+fg_3 = '#00ff00'
+bg_3 = '#008700'
+fg_4 = '#2E3436'
+bg_4 = '#00AF00'
+fg_5 = '#2E3436'
+bg_5 = '#00D700'
+fg_6='#2E3436'
+bg_6='#00ff00'
+
+[palettes.forest]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00FFFF'
+bg_1 = '#2E3436'
+fg_2='#00FFFF'
+bg_2='#005F5F'
+fg_3 = '#00FFFF'
+bg_3 = '#008787'
+fg_4 = '#2E3436'
+bg_4 = '#00AFAF'
+fg_5 = '#2E3436'
+bg_5 = '#00D7D7'
+fg_6='#2E3436'
+bg_6='#00FFFF'
+
+[palettes.ghost]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#EEEEEE'
+bg_1 = '#444444'
+fg_2='#EEEEEE'
+bg_2='#626262'
+fg_3 = '#EEEEEE'
+bg_3 = '#8A8A8A'
+fg_4 = '#444444'
+bg_4 = '#A8A8A8'
+fg_5 = '#444444'
+bg_5 = '#D0D0D0'
+fg_6='#444444'
+bg_6='#EEEEEE'
+
+[palettes.glow]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00ffff'
+bg_1 = '#FF0000'
+fg_2='#00ffff'
+bg_2='#D75F5F'
+fg_3 = '#00ffff'
+bg_3 = '#8A8A8A'
+fg_4 = '#FF0000'
+bg_4 = '#87AFAF'
+fg_5 = '#FF0000'
+bg_5 = '#5FD7D7'
+fg_6='#FF0000'
+bg_6='#00ffff'
+
+[palettes.gray]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = 'white'
+bg_1 = '8'
+fg_2='8'
+bg_2='7'
+fg_3 = 'white'
+bg_3 = '8'
+fg_4 = '8'
+bg_4 = '7'
+fg_5 = 'white'
+bg_5 = '8'
+fg_6='8'
+bg_6='7'
+
+[palettes.gruvbox]
+success_fg = '#00D700'
+error_fg = 'red'
+fg_1 = '#ffffff'
+bg_1 = '#3c3836'
+fg_2='#ffffff'
+bg_2='#665c54'
+fg_3 = '#ffffff'
+bg_3 = '#458588'
+fg_4 = '#ffffff'
+bg_4 = '#689d6a'
+fg_5 = '#ffffff'
+bg_5 = '#d79921'
+fg_6='#ffffff'
+bg_6='#FF5F00'
+
+[palettes.neon]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00FF00'
+bg_1 = '#FF0000'
+fg_2='#00FF00'
+bg_2='#D75F00'
+fg_3 = '#00FF00'
+bg_3 = '#AF8700'
+fg_4 = '#FF0000'
+bg_4 = '#87AF00'
+fg_5 = '#FF0000'
+bg_5 = '#5FD700'
+fg_6='#FF0000'
+bg_6='#00FF00'
+
+[palettes.pastel]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#ffffff'
+bg_1 = '#33658A'
+fg_2='#ffffff'
+bg_2='#06969A'
+fg_3 = '#ffffff'
+bg_3 = '#46A99A'
+fg_4 = '#000000'
+bg_4 = '#87AF87'
+fg_5 = '#000000'
+bg_5 = '#D8BB86'
+fg_6='#000000'
+bg_6='#FCA17D'
+
+[palettes.phoenix]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#ffff00'
+bg_1 = '#d70000'
+fg_2='#ffff00'
+bg_2='#d75f00'
+fg_3 = '#ffff00'
+bg_3 = '#FF8700'
+fg_4 = '#d70000'
+bg_4 = '#FFAF00'
+fg_5 = '#d70000'
+bg_5 = '#FFD700'
+fg_6='#d70000'
+bg_6='#ffff00'
+
+[palettes.proton]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00ffff'
+bg_1 = '#0000ff'
+fg_2='#00ffff'
+bg_2='#005FFF'
+fg_3 = '#00ffff'
+bg_3 = '#0087FF'
+fg_4 = '#0000ff'
+bg_4 = '#00AFFF'
+fg_5 = '#0000ff'
+bg_5 = '#00D7FF'
+fg_6='#0000ff'
+bg_6='#00ffff'
+
+[palettes.red]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#FFFFFF'
+bg_1 = '#FF0000'
+fg_2='#FFFFFF'
+bg_2='#FF5F5F'
+fg_3 = '#FFFFFF'
+bg_3 = '#FF8787'
+fg_4 = '#FF0000'
+bg_4 = '#FFAFAF'
+fg_5 = '#FF0000'
+bg_5 = '#FFD7D7'
+fg_6='#FF0000'
+bg_6='#FFFFFF'
+
+[palettes.screen]
+success_fg = 'green'
+error_fg = 'yellow'
+fg_1 = 'white'
+bg_1 = 'blue'
+fg_2='black'
+bg_2='cyan'
+fg_3 = 'black'
+bg_3 = 'green'
+fg_4 = 'black'
+bg_4 = 'bright-yellow'
+fg_5 = 'black'
+bg_5 = 'yellow'
+fg_6='white'
+bg_6='red'
+
+[palettes.sunrise]
+success_fg = 'green'
+error_fg = 'red'
+fg_1 = '#00FF00'
+bg_1 = '#0000FF'
+fg_2='#00FF00'
+bg_2='#005FD7'
+fg_3 = '#00FF00'
+bg_3 = '#0087AF'
+fg_4 = '#0000FF'
+bg_4 = '#00AF87'
+fg_5 = '#0000FF'
+bg_5 = '#00D75F'
+fg_6='#0000FF'
+bg_6='#00FF00'
+
+[palettes.space-bound]
+success_fg = '#a6e3a1'
+error_fg = '#f38ba8'
+fg_1 = '#ffffff'
+bg_1 = '#1e1e2e'
+fg_2='#ffffff'
+bg_2='#45475a'
+fg_3 = '#1e1e2e'
+bg_3 = '#89b4fa'
+fg_4 = '#1e1e2e'
+bg_4 = '#a6e3a1'
+fg_5 = '#1e1e2e'
+bg_5 = '#f9e2af'
+fg_6='#1e1e2e'
+bg_6='#cba6f7'
+
+# [fill]
+# symbol = ' '
+
+# =======OS===========
+#GhostBSD: replace $os with \U000f02a0 󰊠
+
+[os]
+format = "[$symbol]($style)"
+style = "fg:fg_1 bg:bg_1"
+disabled = false
+
+[os.symbols]
+AIX = "➿ "
+Alpaquita = " " #alpaca
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " " #
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+#GhostBSD = "󰊠 "
+HardenedBSD = "󰞌 "
+Illumos = " "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "#🌿
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = " " #󰈺
+OpenCloudOS = ''
+openEuler = ''
+openSUSE = " "
+OracleLinux = " " #󰌷 ⊂⊃
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+RockyLinux = " "
+Solus = "󰠳 " #
+SUSE = " "
+Ubuntu = " "
+Ultramarine = "󰼮 "
+Unknown = " "
+Void = " "
+Windows = " " #
+
+# ==========battery========
+
+[battery]
+full_symbol = "󰂃 "
+charging_symbol = "⚡️ "
+discharging_symbol = "󰁽 "
+empty_symbol = '󰂎 '
+format = "[$symbol$percentage]($style)"
+disabled = false
+
+# [[battery.display]]
+# threshold = 25
+# style = "bold fg:fg_red2 bg:bg_2"
+
+# [[battery.display]]
+# threshold = 50
+# style = "bold fg:orange bg:bg_2"
+
+# [[battery.display]]
+# threshold = 75
+# style = "bold fg:yellow bg:bg_2"
+
+[[battery.display]]
+threshold = 100
+style = "fg:fg_2 bg:bg_2"
+# style = "bold fg:green bg:bg_2"
+
+# ==========status========
+
+[cmd_duration] #   
+format='[ $duration]($style)'
+style='fg:fg_1 bg:bg_1'
+
+[character]
+success_symbol = "[](fg:success_fg bg:bg_6)" #✅
+error_symbol = "[✘](fg:error_fg bg:bg_6)" #⛔
+format = "[$symbol ](bg:bg_6)"
+
+[status]
+disabled = false
+format = '[$status:$common_meaning ](fg:error_fg bg:bg_6)'
+
+[sudo]
+symbol = "🔑" #
+style = "fg:fg_6 bg:bg_6"
+disabled = false
+
+# =========user/host=========
+
+[env_var.STY]
+#variable = 'STY'
+style = "fg:fg_6 bg:bg_6"
+format = "[  $env_value ]($style)"
+# default=""
+# disabled = true
+
+[hostname]
+ssh_only = true
+style = "fg:fg_6 bg:bg_6"
+format = "[ $hostname ]($style)" # ><
+trim_at = "-"
+# disabled = true
+
+[username] #         
+show_always = true
+style_user = "fg:fg_6 bg:bg_6"
+style_root = "fg:fg_6 bold bg:bg_6"
+format = '[ ($user) ]($style)'
+
+[localip]
+ssh_only = true
+style = "fg:fg_6 bg:bg_6"
+format = '[󰩠 $localipv4]($style)' #@
+disabled = false
+
+# ========directory==========
+
+[directory]
+style = "fg:fg_5 bg:bg_5"
+format = "[$read_only$path]($style)"
+read_only = '󰌾 ' #🔒
+#read_only_style   = ''
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = true
+home_symbol=" " #🏠
+use_os_path_sep = true
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 " # Doc
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Videos" = " "
+"Projects" = "󰲋 "
+".config" = ""
+#"School" = "󰑴"
+#"GitHub" = ""
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+# inspired by @lolbat on CodeBerg
+# [custom.files]
+# description = "Show files count for current directory"
+# command = "find ./ -maxdepth 1 -type f | wc -l"
+# format = "[ 󰈔 $output]($style)"
+# style = "fg:fg_5 bg:bg_5"
+# when = "true"
+
+# [custom.directories]
+# description = "Show directory count count for current directory"
+# command = "find ./ -maxdepth 1 -type d | tail -n +2 | wc -l"
+# format = "[  $output]($style)"
+# style = "fg:fg_5 bg:bg_5"
+# when = "true"
+
+# =========src ctrl=========
+
+[git_branch]
+symbol = "" #              |
+style = "fg:fg_4 bg:bg_4"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:fg_4 bg:bg_4"
+format = '[ $all_status$ahead_behind ]($style)'#"[ $ahead$behind$untracked$modified$staged$deleted ]($style)"
+conflicted = '󰞇= $count'
+ahead = "⇡ $count "
+behind = "⇣ $count "
+deleted = "🗑 $count " #
+diverged = "󰃻 $count " #
+renamed = " $count "
+stashed = "📦 $count "
+modified = "󰙏 $count " #  
+staged = " $count "
+untracked = "󰙌 $count " # 🤷󰙌
+up_to_date = '✓'
+
+[git_commit]
+disabled=true
+only_detached=false
+tag_disabled=false
+tag_symbol = ' '
+# tag_max_candidates=1
+style = "fg:fg_4 bg:bg_4"
+format = "[$symbol$hash$tag ]($style)"
+commit_hash_length = 4
+
+[git_state]
+disabled=false
+style = "bg:bg_4"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+cherry_pick = '[🍒 PICKING]'
+rebase = '[ REBASING]'
+merge = '[ MERGING]'
+bisect = '[🔍 BISECTING]'
+am = '[AM]'
+am_or_rebase = '[AM/REBASE]'
+revert = '[󰕍 REVERTING]'
+#progress_divider = ' of '
+
+[git_metrics]
+added_style = "fg:fg_4 bg:bg_4"
+deleted_style = "fg:fg_4 bg:bg_4"
+format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
+disabled = false
+
+[fossil_branch]
+symbol = '󰘬'
+style = "bg:bg_4"
+format = '[[ $symbol $branch ](fg:fg_4 bg:bg_4)]($style)'
+
+[hg_branch]
+symbol = " "
+style = "bg:bg_4"
+format = '[[ $symbol $branch ](fg:fg_4 bg:bg_4)]($style)'
+
+[pijul_channel]
+symbol = " "
+style = "bg:bg_4"
+format = '[[ $symbol $branch ](fg:fg_4 bg:bg_4)]($style)'
+
+[vcsh]
+symbol = '󰘬'
+style = "bg:bg_4"
+format = '[[ $symbol $branch ](fg:fg_4 bg:bg_4)]($style)'
+
+# ========toolchains/packages==========
+
+# [ansible]
+# symbol = "Ⓐ "
+# style = "fg:fg_3 bg:bg_3"
+# format = '[$symbol $version ]($style)'
+
+[buf]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[bun]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[c]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[cmake]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[cobol]
+symbol = '⚙️'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[conda]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[crystal]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[daml]
+symbol = '𝜦'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[dart]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[deno]
+symbol = '' #🦕
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[dotnet]
+symbol = "󰪮 " # 
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[elixir]
+symbol = " " #💧
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[elm]
+symbol = " " #🌳
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[erlang]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[fennel]
+symbol = '' #󰬍  󰬍
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[fortran]
+symbol = '󱈚 ' # 
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[gleam]
+symbol = 'GLEAM'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[golang]
+symbol = " " #🐹
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[gradle]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[haskell]
+symbol = " " #λ
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[haxe]
+symbol = " " #
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[helm]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[java]
+symbol = "☕ "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[julia]
+symbol = "ஃ " #
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[kotlin]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[lua]
+symbol = " " #
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[meson]
+symbol = "󰔷 " # M
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[mise]
+symbol = "󰰏 "
+#health = 'ready'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[mojo]
+symbol = 'MOJO'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[nats]
+symbol = "󰰒 "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[nim]
+symbol = " " #👑
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[nix_shell]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[nodejs]
+symbol = "󰎙 " #󰎙 🔷 
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[ocaml]
+symbol = " "# 
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[odin]
+symbol = 'ODIN'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[opa]
+symbol = ' ' #  
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[package]
+disabled=false
+symbol = "󰏗 " #  📦
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[perl]
+symbol = " " #
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[php]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[pulumi]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[purescript]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[python]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[quarto]
+symbol = 'QUARTO'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[raku]
+symbol = ' ' #
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[red]
+symbol = 'RED'
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[rlang]
+symbol = "󰟔 " # R
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[ruby]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[rust]
+symbol = "" #🦀
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[scala]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[spack]
+symbol = " " # S 🅢
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[swift]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[terraform]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[typst]
+symbol = ''
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[vagrant]
+symbol = ""
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[vlang]
+symbol = ""
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[xmake]
+symbol = "󰰰 " # 󰰲
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+[zig]
+symbol = " "
+style = "fg:fg_3 bg:bg_3"
+format = '[$symbol $version ]($style)'
+
+# ========containers==========
+
+[aws]
+symbol = "  "
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[azure]
+symbol = " " # 󰠅
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[docker_context]
+symbol = "🐳 "
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[gcloud]
+disabled = false
+symbol = "☁️ "
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[guix_shell]
+symbol = " "
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+disabled = false
+
+[kubernetes]
+format = '[ $context $namespace]($style) '
+style = "fg:fg_2 bg:bg_2"
+disabled = false
+
+[openstack]
+symbol = " "
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[pixi]
+symbol = "󰰘 " # 󰰚
+style = "fg:fg_2 bg:bg_2"
+format = '[[ $symbol $context ](bg:bg_2)]($style) $path'
+
+[singularity]
+disabled = false
+style = "fg:fg_2 bg:bg_2"
+format = '[󰯭 $context $namespace]($style) ' #AppTainer
+
+# ========time/shell/shlvl/jobs/memory_usage==========
+
+[time]
+disabled = false
+time_format = "%I:%M%p" # Hour:Minute Format # %T for seconds
+style = "bg:bg_1"
+format = '[[  $time ](fg:fg_1 bg:bg_1)]($style)'
+
+[shell]
+disabled=false
+bash_indicator = ''
+fish_indicator='󰈺' #🐟
+zsh_indicator="󰰶"
+powershell_indicator = '' # 
+cmd_indicator = ' ' #
+ion_indicator = ''
+elvish_indicator = "󰘧"
+tcsh_indicator = "󰰤"
+nu_indicator = "nu"
+xonsh_indicator = "🐚" # seashell emoji
+unknown_indicator = ' '
+style = "fg:fg_1 bg:bg_1"
+format="[ $indicator ]($style)" #space on right b/c double-width symbol
+
+[shlvl]
+disabled=false
+symbol=""
+style = "fg:fg_1 bg:bg_1"
+format = '[ $symbol$shlvl]($style)'
+
+[jobs]
+disabled = false
+symbol = ' '
+number_threshold = 1
+symbol_threshold = 1
+style = "fg:fg_1 bg:bg_1"
+format="[ $symbol$number]($style)"
+
+[memory_usage]
+disabled=true
+symbol = " "
+style = "fg:fg_1 bg:bg_1"
+format = '[ $symbol ]($style)'

@@ -1,0 +1,210 @@
+@import "../omarchy/current/theme/waybar.css";
+
+/* --- Global-Settings ---*/
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 0px;
+}
+
+/* --- Waybar ---*/
+window#waybar {
+    background-color: transparent;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#waybar.empty .modules-center {
+    opacity: 0;
+}
+
+/* --- Custom Modules ---*/
+.modules-center {
+    min-width: 880px;
+    margin-left: 300px;
+}
+
+/* --- Tooltip ---*/
+tooltip {
+    padding: 6px;
+    background-color: alpha(@background, 1);
+    border: 1.5px solid alpha(@foreground, 0.8);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+tooltip label {
+    color: @foreground;
+    font-weight: normal;
+}
+
+/* --- Workspaces --- */
+#workspaces {
+    border-radius: 999px;
+    margin: 2px 3px;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    margin: 0 4px 0 0;
+    border-radius: 999px;
+    background-color: alpha(@background, 0.85);
+    color: @foreground;
+    box-shadow: 0 1px 2px rgba(10, 10, 10, 0.8);
+}
+
+#workspaces button.active {
+    background-color: alpha(@foreground, 1);
+    color: @background;
+    border-radius: 999px;
+}
+
+#workspaces button:hover {
+    background-color: @foreground;
+    color: @background;
+}
+
+/* --- General Modules (PILL SHAPE) --- */
+#tray,
+#tray-expander,
+#window,
+#mpris,
+#cpu,
+#battery,
+#network,
+#memory,
+#backlight,
+#bluetooth,
+#custom-update,
+#custom-voxtype,
+#custom-voxtype.recording,
+#custom-voxtype.transcribing,
+#custom-screenrecording-indicator,
+#custom-updatespacman,
+#custom-power,
+#idle_inhibitor {
+    min-width: 18px;
+    margin: 2px;
+    padding: 0px 12px;
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgba(10, 10, 10, 0.8);
+    background-color: alpha(@background, 0.85);
+    color: @foreground;
+}
+#custom-voxtype {
+    background-color: alpha(@background, 0.85);
+    min-width: 12px;
+    margin: 0 0 0 2.5px;
+}
+
+#custom-voxtype.recording {
+    background-color: alpha(@background, 0.85);
+    color: #a55555;
+}
+
+/* --- Hover (keep pill) --- */
+
+#cpu:hover,
+#memory:hover,
+#window:hover,
+#mpris:hover,
+#battery:hover,
+#bluetooth:hover,
+#backlight:hover,
+#custom-update:hover,
+#custom-updatespacman:hover,
+#network:hover,
+#custom-power:hover,
+#idle_inhibitor:hover {
+    border-radius: 999px;
+    background-color: @foreground;
+    color: @background;
+    opacity: 0.9;
+}
+
+/* --- Battery states --- */
+#battery.warning {
+    color: #c95d0f;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink2 0.5s steps(12) infinite alternate;
+}
+
+/* --- Animations unchanged --- */
+@keyframes blink {
+    to {
+        color: #4a4a4a;
+    }
+}
+
+@keyframes blink2 {
+    to {
+        background-color: alpha(@background, 0.85);
+        color: #f53c3c;
+    }
+}
+
+/* --- Right module colors (space-bound theme) --- */
+#tray,
+#tray-expander {
+    color: #cba6f7;
+}
+
+#custom-updatespacman {
+    color: #f38ba8;
+}
+
+#custom-update {
+    color: #f9e2af;
+}
+
+#custom-screenrecording-indicator {
+    color: #f38ba8;
+}
+
+#backlight {
+    color: #f9e2af;
+}
+
+#battery {
+    color: #89b4fa;
+}
+
+#bluetooth {
+    color: #94e2d5;
+}
+
+#network {
+    color: #a6e3a1;
+}
+
+#memory {
+    color: #cba6f7;
+}
+
+#custom-gpu {
+    color: #89b4fa;
+}
+
+#cpu {
+    color: #f38ba8;
+}
+
+#custom-power {
+    color: #94e2d5;
+}
+
+#idle_inhibitor {
+    color: #94e2d5;
+}
