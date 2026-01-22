@@ -56,7 +56,7 @@ cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar
 # Starship-Theme  
 &nbsp;  
 ![image](previews/starship.png)    
-&nbsp;  
+&nbsp; 
 For Starship, you can install this theme by copying the toml file to your ~/.config directory:  
- &nbsp; 
+&nbsp; 
 cp ~/.config/omarchy/themes/space-bound/starship.toml ~/.config/starship.toml
