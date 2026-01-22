@@ -48,7 +48,6 @@ For Vesktop users, you can install this theme by copying the theme file to your 
  &nbsp; 
 For the waybar, you can install this theme by copying the config.jsonc file and style.css to your waybar directory:  
 &nbsp;   
-&nbsp;   
 ```yay -S waybar-module-pacman-updates-git```  
 ```cp -r ~/.config/omarchy/themes/space-bound/waybar ~/.config/waybar```
 &nbsp;    
